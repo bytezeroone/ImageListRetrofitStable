@@ -28,7 +28,7 @@ fun PokemonList(
 
         items(itemCount) {
             if (it >= itemCount - 1 && !isLoading) {
-                viewModel.loadPokemonPaginated()
+                viewModel.loadImagePaginated()
             }
             Spacer(modifier = Modifier.height(8.dp))
             PokedexEntry(entry = entries[it])
@@ -44,7 +44,7 @@ fun PokemonList(
         }
         if (loadError.isNotEmpty()) {
             RetrySection(error = loadError) {
-                viewModel.loadPokemonPaginated()
+                viewModel.loadImagePaginated()
             }
         }
     }

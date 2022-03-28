@@ -26,9 +26,9 @@ class PokemonListViewModel @Inject constructor(
 
 
     init {
-        loadPokemonPaginated()
+        loadImagePaginated()
     }
-    fun loadPokemonPaginated() {
+    fun loadImagePaginated() {
         viewModelScope.launch {
             isLoading.value = true
             val result = repository.getPokemonList(PAGE_SIZE, curPage * PAGE_SIZE)
